@@ -65,17 +65,3 @@ jobs:
         with:
           name: Oraxen-v${{ steps.plugin_version.outputs.version }}
           path: build/libs/*.jar
-      
-      - name: Create Release
-        uses: softprops/action-gh-release@v1
-        with:
-          token: ${{ secrets.RELEASE_KEY }}
-          files: |
-            build/libs/*.jar
-            dev_env.zip
-          tag_name: v${{ steps.plugin_version.outputs.version }}-${{ steps.short_sha.outputs.sha_short }}
-          name: Oraxen v${{ steps.plugin_version.outputs.version }}
-          body: |
-            Commit ${{ steps.short_sha.outputs.sha_short }}
-            Oraxen Version ${{ steps.plugin_version.outputs.version }}
-          generate_release_notes: true
