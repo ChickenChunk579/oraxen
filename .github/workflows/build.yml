@@ -1,5 +1,4 @@
-name: Build and publish to releases
-# OR, publish per each commit
+name: Build and upload to releases
 on:
   push:
     branches: [ master, develop ]
